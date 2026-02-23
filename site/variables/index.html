@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Variables - mySoulmate</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Variables";
+        var mkdocs_page_input_path = "variables.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> mySoulmate
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../bot-creation/">Bot Creation</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Variables</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#available-variables">Available Variables</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#using-variables-in-prompts">Using Variables in Prompts</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#basic-usage">Basic Usage</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#time-aware-bots">Time-Aware Bots</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#persona-aware-responses">Persona-Aware Responses</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#best-practices">Best Practices</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#1-dont-overuse-variables">1. Don't Overuse Variables</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#2-use-variables-for-dynamic-behavior">2. Use Variables for Dynamic Behavior</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3-combine-variables-with-personality">3. Combine Variables with Personality</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#4-use-in-greetings">4. Use in Greetings</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#variable-limitations">Variable Limitations</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#variables-are-static-substitutions">Variables Are Static Substitutions</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#no-arithmetic-or-logic">No Arithmetic or Logic</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#case-sensitivity">Case Sensitivity</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#creative-examples">Creative Examples</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#the-time-sensitive-shopkeeper">The Time-Sensitive Shopkeeper</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#the-date-aware-historian">The Date-Aware Historian</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#the-personal-coach">The Personal Coach</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../guidelines/">Content Guidelines</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">mySoulmate</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Variables</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="internal-variables-reference">Internal Variables Reference</h1>
+<p>mySoulmate supports dynamic variables that you can use in your bot's prompts and greetings. These variables are automatically replaced with their actual values when the bot generates a response.</p>
+<h2 id="available-variables">Available Variables</h2>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Description</th>
+<th>Example Output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>{{user}}</code></td>
+<td>The name of the user (or their current persona name if enabled)</td>
+<td><code>Alex</code>, <code>jamal</code></td>
+</tr>
+<tr>
+<td><code>{{bot}}</code></td>
+<td>The name of your bot</td>
+<td><code>Eldric</code>, <code>Aria</code></td>
+</tr>
+<tr>
+<td><code>{{time}}</code></td>
+<td>Current time in HH:MM:SS format</td>
+<td><code>14:32:05</code>, <code>09:15:00</code></td>
+</tr>
+<tr>
+<td><code>{{date}}</code></td>
+<td>Current date in YYYY-MM-DD format</td>
+<td><code>2024-03-15</code>, <code>2025-01-01</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="using-variables-in-prompts">Using Variables in Prompts</h2>
+<p>Variables help make your bot feel more dynamic and aware of the conversation context. Here's how to use them effectively:</p>
+<h3 id="basic-usage">Basic Usage</h3>
+<p>Simply include the variable in your prompt where you want the dynamic value to appear:</p>
+<pre><code>You are a friendly assistant named {{bot}}. You are helping {{user}} with their questions. Always greet them by name.
+</code></pre>
+<p>When the bot responds, <code>{{bot}}</code> will be replaced with your bot's actual name, and <code>{{user}}</code> will be replaced with the user's name.</p>
+<h3 id="time-aware-bots">Time-Aware Bots</h3>
+<p>Use <code>{{time}}</code> and <code>{{date}}</code> to create bots that are aware of when the conversation is happening:</p>
+<pre><code>You are Luna, a night owl who loves stargazing. The current time is {{time}} on {{date}}. If it's late at night, you're energetic and excited. If it's daytime, you're sleepy and prefer to keep conversations brief until &quot;proper stargazing hours.&quot;
+</code></pre>
+<p>This creates a bot whose behavior changes based on the actual time of day!</p>
+<h3 id="persona-aware-responses">Persona-Aware Responses</h3>
+<p>The <code>{{user}}</code> variable automatically adapts if the user has set up a persona:</p>
+<pre><code>You are a mysterious fortune teller. You always address {{user}} by name at the start of each reading. You speak in an enigmatic manner, as if you can see beyond the veil of time.
+</code></pre>
+<p>If a user named "Alex" is chatting, the bot will address them as "Alex." If they've set up a persona named "Sir Galahad the Brave," the bot will address them as "Sir Galahad" instead.</p>
+<h2 id="best-practices">Best Practices</h2>
+<h3 id="1-dont-overuse-variables">1. Don't Overuse Variables</h3>
+<p>You don't need to use <code>{{bot}}</code> repeatedly—the bot already knows its own name. Use variables where they add value:</p>
+<p><strong>❌ Too Much:</strong></p>
+<pre><code>You are {{bot}}. {{bot}} is a wizard. {{bot}} lives in a tower. {{bot}} likes tea. {{bot}} will help {{user}}. {{user}} can ask {{bot}} anything.
+</code></pre>
+<p><strong>✅ Just Right:</strong></p>
+<pre><code>You are a wise wizard living in an ancient tower. You enjoy sharing your knowledge over a cup of tea. Address {{user}} by name when offering guidance.
+</code></pre>
+<h3 id="2-use-variables-for-dynamic-behavior">2. Use Variables for Dynamic Behavior</h3>
+<p>Variables shine when you want the bot's behavior to adapt:</p>
+<pre><code>You are a helpful scheduler assistant. The current date is {{date}} and time is {{time}}. When {{user}} asks about appointments, provide realistic time estimates based on the current time. If it's late, suggest morning slots for the next day.
+</code></pre>
+<h3 id="3-combine-variables-with-personality">3. Combine Variables with Personality</h3>
+<pre><code>You are Morty, a slightly anxious time traveler. You're constantly checking the time—currently {{time}}—and worrying about whether you're &quot;late for the timeline.&quot; You address {{user}} nervously but are always helpful despite your jitters.
+</code></pre>
+<h3 id="4-use-in-greetings">4. Use in Greetings</h3>
+<p>Variables are especially powerful in greeting messages:</p>
+<pre><code>*glances at a glowing pocket watch* 
+
+&quot;Oh! It's {{time}} already? Time really does slip away when you're studying ancient texts. Welcome, {{user}}! I'm {{bot}}. What brings you to my tower today?&quot;
+</code></pre>
+<h2 id="variable-limitations">Variable Limitations</h2>
+<h3 id="variables-are-static-substitutions">Variables Are Static Substitutions</h3>
+<p>Variables are replaced once when the prompt is processed. They don't update mid-conversation:</p>
+<ul>
+<li><code>{{time}}</code> and <code>{{date}}</code> are being changed when the response started generating, not real-time updates</li>
+<li>If a user changes their persona mid-conversation, <code>{{user}}</code> will reflect the current value</li>
+</ul>
+<h3 id="no-arithmetic-or-logic">No Arithmetic or Logic</h3>
+<p>You cannot perform operations on variables:</p>
+<p><strong>❌ Won't Work:</strong></p>
+<pre><code>If {{time}} &gt; 20:00, you are sleepy.
+</code></pre>
+<p><strong>✅ Instead, Guide the AI:</strong></p>
+<pre><code>The current time is {{time}}. If it's late at night (after 20:00), act sleepy and suggest continuing the conversation tomorrow.
+</code></pre>
+<h3 id="case-sensitivity">Case Sensitivity</h3>
+<p>Variables are case-sensitive. Always use lowercase within the double braces:</p>
+<ul>
+<li>✅ <code>{{user}}</code> - Correct</li>
+<li>❌ <code>{{User}}</code> - Won't work</li>
+<li>❌ <code>{{USER}}</code> - Won't work</li>
+</ul>
+<h2 id="creative-examples">Creative Examples</h2>
+<h3 id="the-time-sensitive-shopkeeper">The Time-Sensitive Shopkeeper</h3>
+<pre><code>You are Gus, the proprietor of a magical item shop. The time is {{time}}. If it's early morning, you're setting up shop and offer fresh coffee. If it's midday, you're busy with customers. If it's evening, you're about to close but will help {{user}} with &quot;one last thing.&quot; You're friendly but practical about business hours.
+</code></pre>
+<h3 id="the-date-aware-historian">The Date-Aware Historian</h3>
+<pre><code>You are Dr. Helena Marsh, a historian from the year 1925. Today's date is {{date}}. You find the modern world fascinating and often compare current events to &quot;your time.&quot; You address {{user}} formally and love explaining historical context to modern phenomena.
+</code></pre>
+<h3 id="the-personal-coach">The Personal Coach</h3>
+<pre><code>You are Coach Riley, a supportive fitness coach. You're training {{user}} today. Check the time—{{time}}—and adjust your energy: morning workouts get high energy, afternoon sessions focus on consistency, evening sessions emphasize recovery and reflection.
+</code></pre>
+<hr />
+<p>Use variables thoughtfully to add dynamism and personalization to your bots. When used well, they help create more immersive and responsive characters.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../bot-creation/" class="btn btn-neutral float-left" title="Bot Creation"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../guidelines/" class="btn btn-neutral float-right" title="Content Guidelines">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../bot-creation/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../guidelines/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

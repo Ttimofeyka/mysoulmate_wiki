@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Bot Creation - mySoulmate</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Bot Creation";
+        var mkdocs_page_input_path = "bot-creation.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> mySoulmate
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Bot Creation</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#writing-effective-prompts">Writing Effective Prompts</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#the-core-principle-be-concise">The Core Principle: Be Concise</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#good-vs-bad-prompts">Good vs. Bad Prompts</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#bad-example-too-verbose">❌ Bad Example (Too Verbose)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#good-example-concise-and-focused">✅ Good Example (Concise and Focused)</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#prompt-structure-tips">Prompt Structure Tips</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#1-start-with-identity">1. Start with Identity</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#2-define-core-personality-traits">2. Define Core Personality Traits</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3-establish-speech-patterns">3. Establish Speech Patterns</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#4-add-relevant-context">4. Add Relevant Context</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5-set-boundaries-optional">5. Set Boundaries (Optional)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#advanced-techniques">Advanced Techniques</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#using-examples">Using Examples</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#the-show-dont-tell-principle">The "Show, Don't Tell" Principle</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#avoid-contradictions">Avoid Contradictions</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#leave-room-for-growth">Leave Room for Growth</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#common-mistakes-to-avoid">Common Mistakes to Avoid</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#creating-effective-greetings">Creating Effective Greetings</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#good-greeting-characteristics">Good Greeting Characteristics</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#good-greeting-examples">✅ Good Greeting Examples</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#bad-greeting-examples">❌ Bad Greeting Examples</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#bot-naming-formatting">Bot Naming &amp; Formatting</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#bot-name">Bot Name</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#message-formatting">Message Formatting</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#testing-your-bot">Testing Your Bot</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#summary">Summary</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../variables/">Variables</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../guidelines/">Content Guidelines</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">mySoulmate</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Bot Creation</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="bot-creation-guide">Bot Creation Guide</h1>
+<p>This guide will help you create engaging and well-designed AI character bots on mySoulmate. A well-crafted bot starts with a thoughtful prompt that defines the character's personality, behavior, and responses.</p>
+<h2 id="writing-effective-prompts">Writing Effective Prompts</h2>
+<h3 id="the-core-principle-be-concise">The Core Principle: Be Concise</h3>
+<p>The most important rule of prompt writing is <strong>conciseness</strong>. A bloated, overly detailed prompt often performs worse than a focused, well-structured one. Here's why:</p>
+<ul>
+<li><strong>Model attention</strong>: AI models can lose focus with excessively long prompts</li>
+<li><strong>Consistency</strong>: Shorter prompts lead to more consistent character behavior</li>
+<li><strong>Flexibility</strong>: Concise prompts allow the AI to improvise naturally within boundaries</li>
+</ul>
+<h3 id="good-vs-bad-prompts">Good vs. Bad Prompts</h3>
+<h4 id="bad-example-too-verbose">❌ Bad Example (Too Verbose)</h4>
+<pre><code>You are a wise old wizard named Eldric who has lived for over 500 years in the ancient tower of Mysthaven. You have a long white beard that reaches your waist and you wear deep purple robes with silver stars embroidered on them. You are very kind and patient but can be stern when necessary. You love to share stories about the old days and you always speak in a mysterious and cryptic way. You never use modern slang and you always refer to people as &quot;young one&quot; or &quot;traveler&quot;. You are an expert in all forms of magic especially elemental magic and divination. You have a pet owl named Archimedes who sometimes delivers your messages. You get annoyed when people ask about the meaning of life because you think that's too cliché. You like to drink tea and offer tea to visitors. You have a weakness for cookies. You are afraid of dragons because one burned your original tower 200 years ago. You have three children who are all grown up now and are also wizards. Your wife passed away 100 years ago and you still miss her sometimes. You like to hum old songs when you're thinking. You always pause before giving important advice. You believe that magic should be used responsibly and never for personal gain. You have a scar on your left hand from a duel with a dark sorcerer. You collect ancient scrolls and have the largest library in the kingdom. You sometimes forget people's names but pretend you remember. You are terrified of the ocean because you can't swim. You enjoy playing chess with yourself using enchanted pieces. You have a tendency to ramble when excited about a topic. You always carry a staff made of ancient oak with a crystal on top. The crystal glows when magic is nearby. You are the last of the Order of the Silver Moon, an ancient society of wizards dedicated to protecting the realm. You feel a heavy burden of responsibility. You often stay up late reading by candlelight. Your favorite color is midnight blue. You dislike loud noises and prefer quiet contemplation. You have a secret fear that you will be forgotten after you die. You like to make dramatic entrances and exits. You often speak in riddles and metaphors. You believe everything happens for a reason. You have seen many kingdoms rise and fall. You try not to get attached to mortals because their lives are so short compared to yours. You have a collection of memories stored in glass orbs. You can sometimes see glimpses of the future but you're not always right. You prefer to let people figure things out themselves rather than giving direct answers. You have a dry sense of humor that some people don't understand. You are lonely but won't admit it. You pretend to be more mysterious than you actually are sometimes.
+</code></pre>
+<p><strong>Problems</strong>: Too long, contradictory traits, over-specified details that won't matter in conversation, tries to control too many aspects of behavior.</p>
+<h4 id="good-example-concise-and-focused">✅ Good Example (Concise and Focused)</h4>
+<pre><code>You are Eldric, a 500-year-old wizard residing in the ancient tower of Mysthaven. Wise, patient, and occasionally cryptic, you speak with the measured tone of one who has seen centuries pass. You offer guidance through riddles and metaphors rather than direct answers. You have a dry wit and a fondness for tea. Magic flows through your ancient oak staff, and your crystal ball occasionally offers glimpses of possible futures.
+</code></pre>
+<p><strong>Why it works</strong>: Establishes core identity, personality, and speech patterns without micromanaging every interaction. Leaves room for natural improvisation.</p>
+<h2 id="prompt-structure-tips">Prompt Structure Tips</h2>
+<h3 id="1-start-with-identity">1. Start with Identity</h3>
+<p>Begin with who the character is:</p>
+<pre><code>You are [name], [role/title/background].
+</code></pre>
+<h3 id="2-define-core-personality-traits">2. Define Core Personality Traits</h3>
+<p>Pick 3-5 key traits that define the character:</p>
+<pre><code>You are [trait 1], [trait 2], and [trait 3].
+</code></pre>
+<h3 id="3-establish-speech-patterns">3. Establish Speech Patterns</h3>
+<p>If the character has a distinctive way of speaking, describe it briefly:</p>
+<pre><code>You speak in [style/manner/tone].
+</code></pre>
+<h3 id="4-add-relevant-context">4. Add Relevant Context</h3>
+<p>Include only information that will affect conversations:</p>
+<pre><code>You [relevant background or current situation].
+</code></pre>
+<h3 id="5-set-boundaries-optional">5. Set Boundaries (Optional)</h3>
+<p>If there are things the character would never do:</p>
+<pre><code>You never [specific behavior to avoid].
+</code></pre>
+<h2 id="advanced-techniques">Advanced Techniques</h2>
+<h3 id="using-examples">Using Examples</h3>
+<p>Sometimes, showing is better than telling. You can include example dialogue:</p>
+<pre><code>You are Aria, a cheerful barista at the Cozy Corner café. You're always energetic and love recommending drinks.
+
+Example dialogue:
+User: &quot;Hi, what do you recommend?&quot;
+Aria: &quot;Oh! Welcome! *beams* Our lavender latte is amazing today - it's like a hug in a cup! Are you in the mood for something sweet or more on the bold side?&quot;
+</code></pre>
+<h3 id="the-show-dont-tell-principle">The "Show, Don't Tell" Principle</h3>
+<p>Instead of listing every trait, describe behaviors that imply them:</p>
+<ul>
+<li><strong>Instead of</strong>: "You are kind and caring."</li>
+<li><strong>Try</strong>: "You always notice when someone seems down and offer a gentle word of encouragement."</li>
+</ul>
+<h3 id="avoid-contradictions">Avoid Contradictions</h3>
+<p>Make sure your traits work together naturally. A character who is "always serious" and "loves telling jokes" will create confusing responses.</p>
+<h3 id="leave-room-for-growth">Leave Room for Growth</h3>
+<p>Don't lock the character into rigid behaviors. Allow them to react naturally to different situations.</p>
+<h2 id="common-mistakes-to-avoid">Common Mistakes to Avoid</h2>
+<ol>
+<li><strong>Over-specifying physical appearance</strong>: Unless it affects conversation, visual details can be left to the avatar</li>
+<li><strong>Writing a backstory novel</strong>: Keep history relevant to current interactions</li>
+<li><strong>Controlling every response</strong>: Trust the AI to interpret your character</li>
+<li><strong>Forcing speech quirks</strong>: Let personality emerge naturally</li>
+<li><strong>Neglecting the greeting</strong>: The first message sets the tone for the entire conversation</li>
+</ol>
+<h2 id="creating-effective-greetings">Creating Effective Greetings</h2>
+<p>The greeting message is crucial—it's the first impression users have of your bot.</p>
+<h3 id="good-greeting-characteristics">Good Greeting Characteristics</h3>
+<ul>
+<li>Establishes character immediately</li>
+<li>Invites user interaction</li>
+<li>Sets the scene or mood</li>
+<li>Demonstrates personality</li>
+</ul>
+<h4 id="good-greeting-examples">✅ Good Greeting Examples</h4>
+<pre><code>*The ancient wooden door creaks open, revealing shelves upon shelves of glowing scrolls and artifacts. A figure in midnight blue robes looks up from a dusty tome.*
+
+&quot;Ah, a visitor! It has been... quite some time since someone climbed all these stairs. Come in, come in. Would you care for some tea? I was just about to put the kettle on.&quot;
+
+*Eldric gestures to a worn but comfortable-looking chair near the fireplace.*
+</code></pre>
+<pre><code>&quot;Hey there! *waves enthusiastically from behind the counter* Welcome to Cozy Corner! What can I get started for you today? We just got these amazing new syrups in, and I'm dying to try them out!&quot;
+</code></pre>
+<h4 id="bad-greeting-examples">❌ Bad Greeting Examples</h4>
+<pre><code>Hello. I am Eldric. I am a wizard. I live in a tower. I am 500 years old. What do you want?
+</code></pre>
+<p>(Too flat, doesn't demonstrate personality)</p>
+<pre><code>*Eldric appears dramatically with a flash of lightning* GREETINGS MORTAL! I AM ELDRIC THE GREAT AND POWERFUL WIZARD WHO HAS DEFEATED DRAGONS AND SAVED KINGDOMS! BOW BEFORE MY MIGHT! MWAHAHAHA! *eyes glow red with ultimate power*
+</code></pre>
+<p>(Too over-the-top, forces too much on the user)</p>
+<h2 id="bot-naming-formatting">Bot Naming &amp; Formatting</h2>
+<h3 id="bot-name">Bot Name</h3>
+<p>When naming your bot, please set the name <strong>ONLY in English</strong>. You can still use localized versions of the character's name within the prompt body or the greeting message, but the primary name should be English for consistency.</p>
+<h3 id="message-formatting">Message Formatting</h3>
+<p>For better clarity and consistency in interactions, we recommend following this format:
+- <strong>"TEXT"</strong> (in quotes) for replicas/dialogue.
+- <strong><em>TEXT</em></strong> (in italics) or <strong>TEXT</strong> (plain text) for actions and descriptions.</p>
+<p><em>Example:</em></p>
+<blockquote>
+<p>"Welcome to my tower," <em>Eldric says, gesturing to a chair.</em> "Would you like some tea?"</p>
+</blockquote>
+<h2 id="testing-your-bot">Testing Your Bot</h2>
+<p>After creating your bot:</p>
+<ol>
+<li><strong>Have multiple test conversations</strong> to see if personality is consistent</li>
+<li><strong>Try different conversation topics</strong> to check flexibility</li>
+<li><strong>Ask other users for feedback</strong> on character consistency</li>
+<li><strong>Iterate on your prompt</strong> based on observed behavior</li>
+</ol>
+<h2 id="summary">Summary</h2>
+<ul>
+<li><strong>Be concise</strong>: Quality over quantity</li>
+<li><strong>Focus on essentials</strong>: Identity, personality, speech patterns</li>
+<li><strong>Show, don't tell</strong>: Use examples when helpful</li>
+<li><strong>English names</strong>: Use English for the primary bot name</li>
+<li><strong>Consistent formatting</strong>: Use quotes for speech and italics/plain text for actions</li>
+<li><strong>Test and iterate</strong>: Refine based on actual performance</li>
+</ul>
+<p>Remember: A well-designed prompt is the foundation of a great bot. Take the time to craft it thoughtfully, and your character will come to life naturally in conversations.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href=".." class="btn btn-neutral float-left" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../variables/" class="btn btn-neutral float-right" title="Variables">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href=".." style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../variables/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
