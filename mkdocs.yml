@@ -1,7 +1,0 @@
-site_name: mySoulmate
-nav:
-  - Home: index.md
-  - Bot Creation: bot-creation.md
-  - Variables: variables.md
-  - Content Guidelines: guidelines.md
-theme: readthedocs
